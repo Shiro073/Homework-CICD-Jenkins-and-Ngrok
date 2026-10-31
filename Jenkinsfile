@@ -23,6 +23,12 @@ pipeline {
             }
         }
 
+        stage('2b. Automated Tests') {
+            steps {
+                sh 'python3 -m unittest -v test_app.py'
+            }
+        }
+
         stage('3. Build Docker Image') {
             steps {
                 sh 'docker build -t ${REGISTRY_NAME}:${BUILD_NUMBER} .'
