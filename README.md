@@ -26,3 +26,5 @@ curl -i http://localhost:5000/health
 ## Pipeline
 
 Jenkins membaca `Jenkinsfile` di root repository: checkout, cek sintaks Python, build image Docker, deploy container, lalu health check.
+
+Webhook test: 2026-10-31
