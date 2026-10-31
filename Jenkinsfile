@@ -48,7 +48,7 @@ pipeline {
         stage('5. Health Check') {
             steps {
                 sh 'sleep 3'
-                sh 'curl -fsS http://localhost:5000/health'
+                sh 'curl -fsS http://host.docker.internal:5000/health'
                 sh 'docker logs --tail 20 ${CONTAINER_NAME}'
             }
         }
