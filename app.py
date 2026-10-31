@@ -75,7 +75,7 @@ class APIHandler(BaseHTTPRequestHandler):
             message = str(payload.get("message", "")).strip()
             if not message:
                 return self.send_json(400, {"error": "message must not be empty"})
-            if len(message) > 500:
+            if len(message) > 50:
                 return self.send_json(400, {
                     "error": "message must be 500 characters or fewer"
                 })
