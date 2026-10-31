@@ -27,6 +27,7 @@ pipeline {
             steps {
                 sh 'docker build -t ${REGISTRY_NAME}:${BUILD_NUMBER} .'
                 sh 'docker tag ${REGISTRY_NAME}:${BUILD_NUMBER} ${REGISTRY_NAME}:latest'
+                sh 'docker tag ${REGISTRY_NAME}:${BUILD_NUMBER} ${REGISTRY_NAME}:$(git rev-parse --short HEAD)'
             }
         }
 
